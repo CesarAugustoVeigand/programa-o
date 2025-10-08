@@ -1,0 +1,85 @@
+// =======================================================
+// Desafio Prático: Gerenciador de Dados de Usuários
+// =======================================================
+
+// 1. LISTA (ARRAY) - Nomes de Clientes (Permite Duplicatas)
+// Requisito: 10 elementos (nomes)
+const listaNomes = [
+    "Ana Silva",
+    "Beto Costa",
+    "Carla Reis",
+    "David Lima",
+    "Ana Silva", // Duplicata permitida
+    "Eva Pereira",
+    "Fabio Melo",
+    "David Lima", // Duplicata permitida
+    "Gisele Nunes",
+    "Hugo Santos"
+];
+
+// 2. CONJUNTO (SET) - E-mails Únicos (Não permite duplicatas)
+// Requisito: 10 elementos (e-mails únicos)
+const conjuntoEmails = new Set();
+conjuntoEmails.add("ana@email.com");
+conjuntoEmails.add("beto@email.com");
+conjuntoEmails.add("carla@email.com");
+conjuntoEmails.add("david@email.com");
+conjuntoEmails.add("eva@email.com");
+conjuntoEmails.add("fabio@email.com");
+conjuntoEmails.add("gisele@email.com");
+conjuntoEmails.add("hugo@email.com");
+conjuntoEmails.add("ivan@email.com");
+conjuntoEmails.add("joana@email.com");
+// Tentativa de adicionar duplicata (será ignorada):
+conjuntoEmails.add("ana@email.com");
+
+// 3. MAPA (MAP) - Mapeamento de ID do Cliente para Telefone (Chave -> Valor)
+// Requisito: 10 pares de ID e telefone
+const mapaTelefonesPorId = new Map();
+mapaTelefonesPorId.set(1001, "98888-1234");
+mapaTelefonesPorId.set(1002, "98888-1235");
+mapaTelefonesPorId.set(1003, "98888-1236");
+mapaTelefonesPorId.set(1004, "98888-1237");
+mapaTelefonesPorId.set(1005, "98888-1238");
+mapaTelefonesPorId.set(1006, "98888-1239");
+mapaTelefonesPorId.set(1007, "98888-1240");
+mapaTelefonesPorId.set(1008, "98888-1241");
+mapaTelefonesPorId.set(1009, "98888-1242");
+mapaTelefonesPorId.set(1010, "98888-1243");
+// Tentativa de alterar o telefone do ID 1001:
+mapaTelefonesPorId.set(1001, "97777-0000"); // Substitui o valor antigo
+
+// =======================================================
+// EXIBIÇÃO DOS DADOS
+// =======================================================
+
+console.log("\n=======================================================");
+console.log("             RELATÓRIO DE DADOS DE CLIENTES              ");
+console.log("=======================================================\n");
+
+// Exibição da LISTA (ARRAY)
+console.log("--- 1. Lista de Nomes Cadastrados (Permite Duplicatas) ---");
+console.log("Estrutura: Array (Lista)");
+console.log("Total de entradas:", listaNomes.length);
+console.log("Dados:", listaNomes);
+console.log("\n-------------------------------------------------------\n");
+
+// Exibição do CONJUNTO (SET)
+console.log("--- 2. Conjunto de E-mails Únicos ---");
+console.log("Estrutura: Set (Conjunto)");
+console.log("Total de e-mails únicos:", conjuntoEmails.size);
+console.log("E-mails:", [...conjuntoEmails]); // Converte para Array para exibição legível
+console.log("\n-------------------------------------------------------\n");
+
+
+// Exibição do MAPA (MAP)
+console.log("--- 3. Mapa de Telefones por ID ---");
+console.log("Estrutura: Map (Mapa)");
+console.log("Total de mapeamentos:", mapaTelefonesPorId.size);
+
+// Exibindo o mapeamento ID -> Telefone de forma legível
+mapaTelefonesPorId.forEach((telefone, id) => {
+    console.log(`ID: ${id} | Telefone: ${telefone}`);
+});
+
+console.log("\n=======================================================");
