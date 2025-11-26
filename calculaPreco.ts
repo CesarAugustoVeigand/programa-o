@@ -29,3 +29,30 @@ print(f"Preço inicial de {produto1['nome']}: R$ {produto1['preco']:.2f}")
 
 # Linha para imprimir o Preço final
 print(f"Preço final de {produto1['nome']}: R$ {calcular_preco_final(produto1):.2f}")
+
+--------------------------------------------------------------------------------------------------------------------
+
+  # Define função para calcular preço final
+def calcular_preco_final(preco, desconto=0):
+    """Calcula o preço após aplicar um desconto em porcentagem."""
+    preco_final = preco - (preco * desconto / 100)
+    return preco_final
+
+# Exemplo de uso
+nome_produto = "Fone de ouvido"
+preco_inicial = 200
+desconto_aplicado = 25 # ALTERADO de 15 para 25
+
+# Calcula o preço final
+preco_final_calculado = calcular_preco_final(preco_inicial, desconto_aplicado)
+
+# -------------------------------------------------------------
+# IMPRESSÃO NO CONSOLE (Seguindo o formato solicitado)
+# -------------------------------------------------------------
+
+# Linha adicionada para imprimir o "Preço inicial" com 2 casas decimais.
+print(f"Preço inicial de {nome_produto}: R$ {preco_inicial:.2f}")
+
+# Linha para imprimir o "Preço final" com 2 casas decimais.
+# O cálculo é feito fora da função 'print', resultando na saída esperada: R$ 150.00
+print(f"Preço final de {nome_produto}: R$ {preco_final_calculado:.2f}")
